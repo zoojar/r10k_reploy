@@ -8,52 +8,52 @@ information to include in your README.
 
 ## Table of Contents
 
-1. [Description](#description)
-1. [Setup - The basics of getting started with r10k_deploy](#setup)
-    * [What r10k_deploy affects](#what-r10k_deploy-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with r10k_deploy](#beginning-with-r10k_deploy)
-1. [Usage - Configuration options and additional functionality](#usage)
-1. [Limitations - OS compatibility, etc.](#limitations)
-1. [Development - Guide for contributing to the module](#development)
+- [r10k\_deploy](#r10k_deploy)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Parameters](#parameters)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Limitations](#limitations)
+  - [Development](#development)
+  - [Release Notes/Contributors/Etc. **Optional**](#release-notescontributorsetc-optional)
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your
-module does and what kind of problems users can solve with it.
+The `r10k_deploy` plan is designed to facilitate the deployment of code using r10k, a popular tool for managing Puppet environments. This plan automates the process of disabling the Puppet agent and stopping the Puppet server, deploying the code via r10k, and performing checks to ensure the consistency of the deployed code across the specified targets.
 
-This should be a fairly short description helps the user decide if your module
-is what they want.
+By using this plan, users can easily synchronize and manage the deployment of their Puppet code across multiple environments and systems. It provides a streamlined approach for deploying code, verifying its integrity, and ensuring the smooth operation of the Puppet infrastructure.
+
+## Parameters
+
+- `targets`: Specifies the targets on which the code should be deployed. This can be a single target or a collection of targets.
+- `env` (optional): Specifies the environment to deploy the code to.
+
 
 ## Setup
 
-### What r10k_deploy affects **OPTIONAL**
+### What r10k_deploy affects
 
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
+The `r10k_deploy` plan primarily affects the deployment of code using r10k and the management of Puppet and Puppetserver services. It may alter the following:
 
-If there's more that they should know about, though, this is the place to
-mention:
+- Puppet agent: The plan disables the Puppet agent during the code deployment process.
+- Puppetserver: The plan stops and disables the Puppetserver service to ensure a blocking synchronization deployment.
+- Code deployment: The plan deploys code using r10k, synchronizing it across the specified targets.
 
-* Files, packages, services, or operations that the module will alter, impact,
-  or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
+### Setup Requirements
 
-### Setup Requirements **OPTIONAL**
+There are no specific setup requirements for using the `r10k_deploy` plan. However, it assumes the availability and proper configuration of r10k and the Puppet infrastructure.
 
-If your module requires anything extra before setting up (pluginsync enabled,
-another module, etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section here.
 
 ### Beginning with r10k_deploy
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most basic
-use of the module.
+To get started with the `r10k_deploy` plan, follow these basic steps:
+
+1. Ensure that r10k is properly installed and configured on the system where you will be executing the plan.
+2. Make sure that the Puppet infrastructure is set up and operational, including the Puppetserver.
+3. Specify the targets on which you want to deploy the code.
+4. Optionally, configure the desired environment for the code deployment.
+5. Execute the `r10k_deploy` plan, providing the necessary parameters.
 
 ## Usage
 
@@ -62,39 +62,6 @@ users how to use your module to solve problems, and be sure to include code
 examples. Include three to five examples of the most important or common tasks a
 user can accomplish with your module. Show users how to accomplish more complex
 tasks that involve different types, classes, and functions working in tandem.
-
-## Reference
-
-This section is deprecated. Instead, add reference information to your code as
-Puppet Strings comments, and then use Strings to generate a REFERENCE.md in your
-module. For details on how to add code comments and generate documentation with
-Strings, see the [Puppet Strings documentation][2] and [style guide][3].
-
-If you aren't ready to use Strings yet, manually create a REFERENCE.md in the
-root of your module directory and list out each of your module's classes,
-defined types, facts, functions, Puppet tasks, task plans, and resource types
-and providers, along with the parameters for each.
-
-For each element (class, defined type, function, and so on), list:
-
-* The data type, if applicable.
-* A description of what the element does.
-* Valid values, if the data type doesn't make it obvious.
-* Default value, if any.
-
-For example:
-
-```
-### `pet::cat`
-
-#### Parameters
-
-##### `meow`
-
-Enables vocalization in your cat. Valid options: 'string'.
-
-Default: 'medium-loud'.
-```
 
 ## Limitations
 
