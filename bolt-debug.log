@@ -1,0 +1,52 @@
+2023-06-04T12:24:26.010008 INFO   [main] [Bolt::Logger] Loaded project from 'C:/Users/David/r10k_deploy'
+2023-06-04T12:24:26.010493 DEBUG  [main] [Bolt::Executor] Started with 100 max thread(s)
+2023-06-04T12:24:26.010969 DEBUG  [main] [Bolt::PAL] Loading modules from C:/Program Files/Puppet Labs/Bolt/lib/ruby/gems/2.7.0/gems/bolt-3.26.1/bolt-modules;C:/Users/David/r10k_deploy/modules;C:/Users/David/r10k_deploy/.modules;C:/Program Files/Puppet Labs/Bolt/lib/ruby/gems/2.7.0/gems/bolt-3.26.1/modules
+2023-06-04T12:24:26.011817 DEBUG  [main] [Bolt::Inventory] Loaded inventory from C:/Users/David/r10k_deploy/inventory.yaml
+2023-06-04T12:24:26.500200 DEBUG  [] [Bolt::Inventory::Inventory] Did not find config for primary.local in inventory
+2023-06-04T12:24:26.500511 DEBUG  [] [Bolt::Inventory::Inventory] Did not find config for compiler1.local in inventory
+2023-06-04T12:24:26.500764 DEBUG  [] [Bolt::Inventory::Inventory] Did not find config for compiler2.local in inventory
+2023-06-04T12:24:26.503030 INFO   [event-publisher] [Bolt::Outputter::Logger] Starting: plan r10k_deploy
+2023-06-04T12:24:26.508531 INFO   [event-publisher] [Bolt::Outputter::Logger] Starting: Checking r10k connectivity, running: '/usr/bin/r10k deploy display --fetch' on primary.local, compiler1.local, compiler2.local
+2023-06-04T12:24:26.603968 DEBUG  [] [Bolt::Transport::SSH] Authentication method 'gssapi-with-mic' (Kerberos) is not available.
+2023-06-04T12:24:26.605728 INFO   [exec-worker-1] [Bolt::Executor] Running command '/usr/bin/r10k deploy display --fetch' on ["primary.local"]
+2023-06-04T12:24:26.605973 DEBUG  [exec-worker-1] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy display --fetch' on primary.local
+2023-06-04T12:24:26.606109 INFO   [exec-worker-2] [Bolt::Executor] Running command '/usr/bin/r10k deploy display --fetch' on ["compiler1.local"]
+2023-06-04T12:24:26.607748 DEBUG  [exec-worker-2] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy display --fetch' on compiler1.local
+2023-06-04T12:24:26.606215 INFO   [exec-worker-3] [Bolt::Executor] Running command '/usr/bin/r10k deploy display --fetch' on ["compiler2.local"]
+2023-06-04T12:24:26.610460 DEBUG  [exec-worker-3] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy display --fetch' on compiler2.local
+2023-06-04T12:24:26.612308 DEBUG  [exec-worker-1] [primary.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:26.612487 DEBUG  [exec-worker-2] [compiler1.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:26.612656 DEBUG  [exec-worker-3] [compiler2.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:31.009658 INFO   [exec-worker-1] [Bolt::Executor] {"target":"primary.local","action":"command","object":"/usr/bin/r10k deploy display --fetch","status":"success","value":{"stdout":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","stderr":"","merged_output":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","exit_code":0}}
+2023-06-04T12:24:31.334452 INFO   [exec-worker-3] [Bolt::Executor] {"target":"compiler2.local","action":"command","object":"/usr/bin/r10k deploy display --fetch","status":"success","value":{"stdout":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","stderr":"","merged_output":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","exit_code":0}}
+2023-06-04T12:24:31.384427 INFO   [exec-worker-2] [Bolt::Executor] {"target":"compiler1.local","action":"command","object":"/usr/bin/r10k deploy display --fetch","status":"success","value":{"stdout":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","stderr":"","merged_output":"---\n:sources:\n- :name: :main\n  :basedir: \"/etc/puppetlabs/code/environments\"\n  :remote: git@github.com:zoojar/control-repo.git\n  :environments:\n  - production\n","exit_code":0}}
+2023-06-04T12:24:31.386070 INFO   [event-publisher] [Bolt::Outputter::Logger] Finished: Checking r10k connectivity, running: '/usr/bin/r10k deploy display --fetch' with 0 failures in 4.88 sec
+2023-06-04T12:24:31.387098 INFO   [event-publisher] [Bolt::Outputter::Logger] Starting: Deploying code, running: '/usr/bin/r10k deploy environment  -m ' on primary.local, compiler1.local, compiler2.local
+2023-06-04T12:24:31.386240 INFO   [exec-worker-1] [Bolt::Executor] Running command '/usr/bin/r10k deploy environment  -m ' on ["compiler2.local"]
+2023-06-04T12:24:31.387257 DEBUG  [exec-worker-1] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy environment  -m ' on compiler2.local
+2023-06-04T12:24:31.386181 INFO   [exec-worker-2] [Bolt::Executor] Running command '/usr/bin/r10k deploy environment  -m ' on ["primary.local"]
+2023-06-04T12:24:31.388003 DEBUG  [exec-worker-2] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy environment  -m ' on primary.local
+2023-06-04T12:24:31.386808 INFO   [exec-worker-3] [Bolt::Executor] Running command '/usr/bin/r10k deploy environment  -m ' on ["compiler1.local"]
+2023-06-04T12:24:31.388905 DEBUG  [exec-worker-3] [Bolt::Transport::SSH] Running command '/usr/bin/r10k deploy environment  -m ' on compiler1.local
+2023-06-04T12:24:31.388770 DEBUG  [exec-worker-1] [compiler2.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:31.389612 DEBUG  [exec-worker-2] [primary.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:31.390380 DEBUG  [exec-worker-3] [compiler1.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:40.023444 INFO   [exec-worker-2] [Bolt::Executor] {"target":"primary.local","action":"command","object":"/usr/bin/r10k deploy environment  -m ","status":"success","value":{"stdout":"","stderr":"","merged_output":"","exit_code":0}}
+2023-06-04T12:24:40.111026 INFO   [exec-worker-3] [Bolt::Executor] {"target":"compiler1.local","action":"command","object":"/usr/bin/r10k deploy environment  -m ","status":"success","value":{"stdout":"","stderr":"","merged_output":"","exit_code":0}}
+2023-06-04T12:24:40.156191 INFO   [exec-worker-1] [Bolt::Executor] {"target":"compiler2.local","action":"command","object":"/usr/bin/r10k deploy environment  -m ","status":"success","value":{"stdout":"","stderr":"","merged_output":"","exit_code":0}}
+2023-06-04T12:24:40.157431 INFO   [event-publisher] [Bolt::Outputter::Logger] Finished: Deploying code, running: '/usr/bin/r10k deploy environment  -m ' with 0 failures in 8.77 sec
+2023-06-04T12:24:40.164328 INFO   [exec-worker-1] [Bolt::Executor] Running task r10k_deploy::get_deploy_md5 with '{"_task":"r10k_deploy::get_deploy_md5"}' on ["primary.local"]
+2023-06-04T12:24:40.164875 DEBUG  [exec-worker-1] [Bolt::Transport::SSH] Running task 'r10k_deploy::get_deploy_md5' on primary.local
+2023-06-04T12:24:40.164501 INFO   [exec-worker-2] [Bolt::Executor] Running task r10k_deploy::get_deploy_md5 with '{"_task":"r10k_deploy::get_deploy_md5"}' on ["compiler2.local"]
+2023-06-04T12:24:40.165257 DEBUG  [exec-worker-2] [Bolt::Transport::SSH] Running task 'r10k_deploy::get_deploy_md5' on compiler2.local
+2023-06-04T12:24:40.164414 INFO   [exec-worker-3] [Bolt::Executor] Running task r10k_deploy::get_deploy_md5 with '{"_task":"r10k_deploy::get_deploy_md5"}' on ["compiler1.local"]
+2023-06-04T12:24:40.165759 DEBUG  [exec-worker-3] [Bolt::Transport::SSH] Running task 'r10k_deploy::get_deploy_md5' on compiler1.local
+2023-06-04T12:24:40.164290 INFO   [event-publisher] [Bolt::Outputter::Logger] Starting: task r10k_deploy::get_deploy_md5 on primary.local, compiler1.local, compiler2.local
+2023-06-04T12:24:40.166085 DEBUG  [exec-worker-1] [primary.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:40.166450 DEBUG  [exec-worker-2] [compiler2.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:40.167180 DEBUG  [exec-worker-3] [compiler1.local] Disabling use_agent in net-ssh: pageant process not running
+2023-06-04T12:24:42.524031 INFO   [exec-worker-3] [Bolt::Executor] {"target":"compiler1.local","action":"task","object":"r10k_deploy::get_deploy_md5","status":"success","value":{"md5":"8fdb34067fe59e744132f3ff0503e790"}}
+2023-06-04T12:24:42.571870 INFO   [exec-worker-1] [Bolt::Executor] {"target":"primary.local","action":"task","object":"r10k_deploy::get_deploy_md5","status":"success","value":{"md5":"8fdb34067fe59e744132f3ff0503e790"}}
+2023-06-04T12:24:42.608052 INFO   [exec-worker-2] [Bolt::Executor] {"target":"compiler2.local","action":"task","object":"r10k_deploy::get_deploy_md5","status":"success","value":{"md5":"8fdb34067fe59e744132f3ff0503e790"}}
+2023-06-04T12:24:42.609433 INFO   [event-publisher] [Bolt::Outputter::Logger] Finished: task r10k_deploy::get_deploy_md5 with 0 failures in 2.45 sec
+2023-06-04T12:24:42.613601 INFO   [event-publisher] [Bolt::Outputter::Logger] Finished: plan r10k_deploy in 16.11 sec

@@ -1,0 +1,7 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Returns an md5 hash of filelist in /etc/puppetlabs/code/environments ",
+  "parameters": {
+  }
+}
