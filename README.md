@@ -1,10 +1,6 @@
 # r10k_deploy
 
-Welcome to your new module. A short overview of the generated parts can be found
-in the [PDK documentation][1].
-
-The README template below provides a starting point with details about what
-information to include in your README.
+Welcome to the `r10k_deploy` module. This README provides an overview of the module and serves as a starting point for documenting important information.
 
 ## Table of Contents
 
